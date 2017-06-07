@@ -428,9 +428,9 @@ class Auth_OpenID_Consumer {
 
         if (in_array($response->status, array(Auth_OpenID_SUCCESS,
                                               Auth_OpenID_CANCEL))) {
-            if ($response->identity_url !== null) {
+            if ($response->getIdentityUrl() !== null) {
                 $disco = $this->getDiscoveryObject($this->session,
-                                                   $response->identity_url,
+                                                   $response->getIdentityUrl(),
                                                    $this->session_key_prefix);
                 $disco->cleanup(true);
             }
@@ -2117,6 +2117,16 @@ class Auth_OpenID_ConsumerResponse {
             return $this->endpoint->getDisplayIdentifier();
         }
         return null;
+    }
+
+    /**
+     * Get identity URL.
+     *
+     * @return string
+     */
+    function getIdentityUrl()
+    {
+        return $this->identity_url;
     }
 }
 

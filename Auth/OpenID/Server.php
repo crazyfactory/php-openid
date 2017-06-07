@@ -1282,7 +1282,7 @@ class Auth_OpenID_CheckIDRequest extends Auth_OpenID_Request {
     }
 
     /**
-     * Get identity
+     * Get identity.
      *
      * @return string
      */

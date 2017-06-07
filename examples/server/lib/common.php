@@ -36,7 +36,7 @@ function doAuth($info, $trusted=null, $fail_cancels=false,
             $trusted = false;
         }
     } else {
-        $req_url = $info->identity;
+        $req_url = $info->getIdentity();
     }
 
     $user = getLoggedInUser();

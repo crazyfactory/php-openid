@@ -1280,6 +1280,16 @@ class Auth_OpenID_CheckIDRequest extends Auth_OpenID_Request {
         $response->setArg(Auth_OpenID_OPENID_NS, 'mode', 'cancel');
         return $response->toURL($this->return_to);
     }
+
+    /**
+     * Get identity
+     *
+     * @return string
+     */
+    function getIdentity()
+    {
+        return $this->identity;
+    }
 }
 
 /**

@@ -45,8 +45,7 @@ function action_default()
             } else {
                 return trust_render($request);
             }
-        } else if ((!$request->identity) &&
-                   (!$request->idSelect())) {
+        } else if (!$request->getIdentity()) {
             // No identifier used or desired; display a page saying
             // so.
             return noIdentifier_render();
